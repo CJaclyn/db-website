@@ -49,7 +49,7 @@
       <label for="password">Password *</label><br>
       <input name="password" type="password" id="password" minlength="5" maxlength="20"required>
     </fieldset>
-    <p>* </p>
+    <p>* Required</p>
     <button type="submit">Sign-up</button>
   </form>
   </div>
