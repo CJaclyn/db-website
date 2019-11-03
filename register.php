@@ -27,9 +27,9 @@
     <fieldset>
       <legend>Personal Information</legend>
       <label for="firstname">First Name *</label>
-      <input name="firstname" type="text" id="firstname" maxlength="15" >
+      <input name="firstname" type="text" id="firstname" maxlength="15"required>
       <label for="lastname">Last Name *</label>
-      <input name="lastname" type="text" id="lastname" maxlength="20" >
+      <input name="lastname" type="text" id="lastname" maxlength="20"required>
       <label for="birthday">Birthday *</label><br>
       <input name="birthday" type="date" id="birthday"
     </fieldset>
@@ -43,11 +43,11 @@
     <fieldset>
       <legend>Account Information</legend>
       <label for="email">Email *</label>
-      <input name="email" type="email" id="email" maxlength="45" > <br>
+      <input name="email" type="email" id="email" maxlength="45"required> <br>
       <label for="username">Username *</label>
-      <input name="username" type="text" id="username" minlength="3" maxlength="20" >
+      <input name="username" type="text" id="username" minlength="3" maxlength="20"required>
       <label for="password">Password *</label><br>
-      <input name="password" type="password" id="password" minlength="5" maxlength="20" >
+      <input name="password" type="password" id="password" minlength="5" maxlength="20"required>
     </fieldset>
     <p>* </p>
     <button type="submit">Sign-up</button>
