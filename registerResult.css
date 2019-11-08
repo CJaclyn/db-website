@@ -1,8 +1,35 @@
-h1 {
+#successful {
+  text-align: center;
   background-color: white;
   padding: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   margin-left: 25%;
   margin-right: 25%;
-  text-align: center;
   margin-top: 10rem;
+}
+
+#successful h1 {
+  margin-bottom: 3rem;
+}
+
+#successful a {
+  text-decoration: none;
+  color: white;
+  background-color: #2f4550;
+  padding: 1rem 2rem;
+}
+
+#successful a:hover {
+  background-color: pink;
+  transition: .5s;
+}
+
+#error {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+#error h1 {
+  font-size: 1.5rem;
 }

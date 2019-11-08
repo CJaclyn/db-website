@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Add Classes</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
-<link rel="stylesheet" href="homepage.css">
+<link rel="stylesheet" href="addClasses.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,8 +13,9 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="assignments.html">Assignments</a>
+      </li>
       <li><a href="register.html">Register</a></li>
-      <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="adminlogin.html">Admin</a></li>
     </ul>

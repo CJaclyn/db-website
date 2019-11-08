@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
-<link rel="stylesheet" href="adminlogin.css">
+<link rel="stylesheet" href="adminLogin.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,16 +17,50 @@
       </li>
       <li><a href="register.html">Register</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="admin.php">Admin</a></li>
+      <li><a href="adminLogin.html">Admin</a></li>
     </ul>
   </nav>
 
-  <form action="" method="post">
-    <label for="username">Admin Username</label>
-    <input name="adminUser" type="text" id="username">
-    <label for="password">Admin Password</label>
-    <input name="adminPass" type="text" id="password">
-  </form>
+  <h1>Admin Login</h1>
+  <div id="form">
+    <form action="adminPage.php" method="post" name="adminForm" onsubmit="return validation();">
+      <label for="username">Admin Username</label>
+      <input type="text" id="username" name="username" required><span id="validate-adminU"></span><br>
+      <label for="password">Admin Password</label>
+      <input type="password" id="password" name="password" required><span id="validate-adminP"></span><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+  function validation(){
+    var username, password;
+    username = document.getElementById("username").value;
+    password = document.getElementById("password").value;
+
+    if(username == "admin" && password == "admin"){
+      return true;
+    }else {
+      alert("Invalid admin credentials!");
+      if(username !== "admin" && password == "admin"){
+        document.getElementById("validate-adminU").innerHTML = "Admin username invalid.";
+        document.getElementById("validate-adminP").innerHTML = "";
+        return false;
+      }
+      if(password !== "admin" && username == "admin"){
+        document.getElementById("validate-adminP").innerHTML = "Admin password invalid.";
+        document.getElementById("validate-adminU").innerHTML = "";
+        return false;
+      }
+      if(username != "admin" && password != "password"){
+        document.getElementById("validate-adminU").innerHTML = "Admin username invalid.";
+        document.getElementById("validate-adminP").innerHTML = "Admin password invalid.";
+        return false;
+      }
+    }
+
+  }
+  </script>
 
 </body>
 </html>

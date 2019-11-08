@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+#form {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+form label {
+  font-size: 1.1rem;
+}
+
+form label, input {
+  margin-bottom: 1rem;
+}
+
+form input {
+  margin-left: 1rem;
+  padding: .5rem;
+  padding-right: 3rem;
+  border: none;
+  border-radius: 15px;
+}
+
+form span {
+  color: red;
+  font-size: .9rem;
+  margin-left: 1rem;
+  position: absolute;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: .7rem 2.3rem;
+  border-radius: 3px;
+  background-color: #2f4550;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

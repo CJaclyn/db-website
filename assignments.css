@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+/*not logged In css*/
+
+#error {
+  text-align: center;
+  background-color: white;
+  margin: 10rem 25rem;
+  padding: 1rem;
+  padding-bottom: 5rem;
+}
+
+#error h1 {
+  margin-bottom: 2.5rem;
+}
+
+#error a {
+  display: block;
+  color: #586f7c;
+}
+
+#error a:first-of-type {
+  margin-bottom: 1rem;
+}
+
+#error a:hover {
+  color: #b8dbd9;
+  transition: .5s;
+}
+
+/*logged in css*/
+#header {
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+
+.container {
+  margin-top: 3rem;
+  background-color: #2f4550;
+  margin-right: 10rem;
+  margin-left: 10rem;
+  box-shadow: 3px 3px 5px black;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div h4{
+  color: white;
+  opacity: 0.3;
+}
+
+div h2 {
+  margin-top: -1rem;
+  color: white;
+}
+
+div .column {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  float: left;
+  width: 33.33%;
+}
+
+div .left {
+  width: 33.33%;
+}
+
+div .mid {
+  width: 33.33%;
+}
+
+div .right {
+  width: 33.33%;
+  color: black;
+}
+
+div .l {
+  font-size: 1.3rem;
+}
+
+div .r {
+  float: right;
+}
+
+div .r a {
+  color: #2f4550;
+  text-decoration: none;
+  padding: .4rem 1rem;
+  background-color: white;
+}

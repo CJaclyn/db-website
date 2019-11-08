@@ -17,7 +17,7 @@
       </li>
       <li><a href="register.html">Sign-up</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="admin.php">Admin</a></li>
+      <li><a href="adminLogin.html">Admin</a></li>
     </ul>
   </nav>
 
@@ -31,22 +31,22 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-  $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
-
-   if(!empty($firstName) && !empty($lastName) && !empty($birthday) && !empty($email) && !empty($username)
-   && !empty($password) && !empty($college) && !empty($major)){
-      $formQuery = "INSERT INTO user (username, password, email, firstname, lastname, birthday, college, major)
-      VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$birthday', '$college', '$major')";
-      if(mysqli_query($db, $formQuery)){
-          echo "<h1>Successfully registered!</h1>";
-      } else{
-          echo "ERROR: Could not able to execute $formQuery. " . mysqli_error($db);
-      }
-      mysqli_close($db);
-   }
-   elseif(empty($firstName) || empty($lastName) || empty($birthday) || empty($email) || empty($username) || empty($password) || empty($college) || empty($major)){
-     echo "Missing information!";
-   }
+    //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
+    $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
+    $formQuery = "INSERT INTO user (username, password, email, firstname, lastname, birthday, college, major)
+    VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$birthday', '$college', '$major')";
+    if(mysqli_query($db, $formQuery)){
+        echo "<div id='successful'>";
+        echo "<h1>Successfully registered!</h1>";
+        echo "<a href='index.html'>Return to Homepage</a>";
+        echo "</div>";
+    } else{
+        echo "<div id='error'>";
+        echo "<h1>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Registration%20Error' target='_top'>Jaclyn Cao.</a></h1>";
+        //echo "ERROR: Could not able to execute $formQuery. ".mysqli_error($db);
+        echo "</div>";
+    }
+    mysqli_close($db);
    ?>
 </body>
 </html>
