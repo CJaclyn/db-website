@@ -11,19 +11,6 @@ footer {
   z-index: -1;
 }
 
-.centered h1{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #f4f4f9;
-  font-size: 4rem;
-  padding: .8rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  
-}
-
 * {
   box-sizing: border-box;
 }

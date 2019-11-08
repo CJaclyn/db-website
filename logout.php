@@ -21,24 +21,24 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Register</a></li>
+      <li><a href="register.html">Sign-up</a></li>
       <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="adminlogin.html">Admin</a></li>
+      <li><a href="adminLogin.html">Admin</a></li>
     </ul>
   </nav>
 <?php
+  header( "refresh:2;url=index.html" );
   if (!empty($old_user))
   {
-    echo '<p>You are now logged out.</p>';
+    echo '<h2>You are now logged out.';
+    echo '<p>Returning to homepage. . .</p>';
   }
   else
   {
-    // if they weren't logged in but came to this page somehow
-    echo '<p>You were not logged in, and so have not been logged out.</p>';
+    echo '<h2>You were not logged in, and so have not been logged out.</h2>';
   }
 ?>
-<p><a href="index.html">Back to Home Page</a></p>
 
 </body>
 </html>

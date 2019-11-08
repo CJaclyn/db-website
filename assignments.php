@@ -34,6 +34,7 @@
       </nav>";
 
       echo "<h1 id='header'>Assignments</h1>";
+      echo "<a href='addAssignments.php'>Add Assignments</a>";
 
       $query = "SELECT class.className, class.email, assignmentType, assignmentName, DATE_FORMAT(dueDate, '%a %b %e, %Y') dueDate
       FROM assignment
@@ -89,13 +90,13 @@
       "<nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"register.html\">Register</a></li>
+          <li><a href=\"register.html\">Sign-up</a></li>
           <li><a href=\"login.php\">Login</a></li>
           <li><a href=\"about.html\">About</a></li>
-          <li><a href=\"adminlogin.html\">Admin</a></li>
+          <li><a href=\"adminLogin.html\">Admin</a></li>
         </ul>
       </nav>";
-      
+
       echo '<div id="error"><h1>You need to login to see this page.</h1>';
       echo "<a href='login.php'>Login</a>";
       echo "<a href='index.html'>Go to homepage</a></div>";

@@ -1,11 +1,13 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Add Classes</title>
+<title>Manage Assignments</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
-<link rel="stylesheet" href="addClasses.css">
+<link rel="stylesheet" href="homepage.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +18,7 @@
       <li><a href="register.html">Sign-up</a></li>
       <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="adminLogin.html">Admin</a></li>
+      <li><a href="adminlogin.html">Admin</a></li>
     </ul>
   </nav>
 

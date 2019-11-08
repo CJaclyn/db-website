@@ -12,9 +12,8 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="assignments.html">Assignments</a>
-      </li>
-      <li><a href="register.html">Register</a></li>
+      <li><a href="register.html">Sign-up</a></li>
+      <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="adminLogin.html">Admin</a></li>
     </ul>

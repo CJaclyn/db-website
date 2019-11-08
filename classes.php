@@ -38,14 +38,21 @@
       $query = "SELECT * FROM class WHERE username='".$username."' ORDER BY className ASC";
 
       $classes = mysqli_query($db, $query);
+
+      echo "<form method=\"get\" action=\"classes.php\">";
+      echo "<table>";
+      echo "<tr> <th>Class ID</th> <th>Class Name</th> <th>Teacher</th> <th>Email</th></tr>";
       if(mysqli_query($db, $query)){
         while ($row = mysqli_fetch_array($classes)) {
-          echo $row['classID'];
-          echo $row['className'];
-          echo $row['teacher'];
-          echo $row['email'];
-          echo "<br />";
+          echo "<tr>";
+          echo "<td>".$row['classID']."</td>";
+          echo "<td>".$row['className']."</td>";
+          echo "<td>".$row['teacher']."</td>";
+          echo "<td>".$row['email']."</td>";
+          echo "<td><button type=\"submit\" name='".$row['username']."'>"."Delete</button></td>";
         }
+      echo "</table>";
+      echo "</form>";
 
       }else {
         echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
@@ -59,10 +66,10 @@
       "<nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"register.html\">Register</a></li>
+          <li><a href=\"register.html\">Sign-up</a></li>
           <li><a href=\"login.php\">Login</a></li>
           <li><a href=\"about.html\">About</a></li>
-          <li><a href=\"adminlogin.html\">Admin</a></li>
+          <li><a href=\"adminLogin.html\">Admin</a></li>
         </ul>
       </nav>";
 
