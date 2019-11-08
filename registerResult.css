@@ -9,7 +9,7 @@
   margin-top: 10rem;
 }
 
-#successful h1 {
+#successful h2 {
   margin-bottom: 3rem;
 }
 
@@ -21,7 +21,7 @@
 }
 
 #successful a:hover {
-  background-color: pink;
+  background-color: #B8DBD9;
   transition: .5s;
 }
 
@@ -30,6 +30,6 @@
   margin-top: 8rem;
 }
 
-#error h1 {
+#error h2 {
   font-size: 1.5rem;
 }

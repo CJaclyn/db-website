@@ -17,7 +17,6 @@ if (isset($_POST['username']) && isset($_POST['password']))
   $result = $db->query($query);
   if ($result->num_rows)
   {
-    // if they are in the database register the user id
     $_SESSION['valid_user'] = $username;
   }
   $db->close();
@@ -51,8 +50,9 @@ if (isset($_POST['username']) && isset($_POST['password']))
       </nav>";
 
       echo '<p>Welcome '.$_SESSION['valid_user'].'!<br />';
-      echo '<p><a href="assignments.php">View your assignments</a></p>';
-      echo '<p><a href="classes.php">View your classes</a></p>';
+      echo '<p><a href="account.php">Your account</a></p>';
+      echo '<p><a href="assignments.php">View assignments</a></p>';
+      echo '<p><a href="classes.php">View classes</a></p>';
     }
     else{
     echo "<nav>
@@ -67,21 +67,20 @@ if (isset($_POST['username']) && isset($_POST['password']))
     {
       if (isset($username))
       {
-        // if they've tried and failed to log in
         echo '<p>Invalid credentials.</p>';
       }
 
-      // provide form to log in
+      echo '<h2>User Login</h2>';
+      //login form
+      echo '<div id="form">';
       echo '<form action="login.php" method="post">';
-      echo '<fieldset>';
-      echo '<legend>Login</legend>';
       echo '<p><label for="username">Username:</label>';
       echo '<input type="text" name="username" id="username" required></p>';
       echo '<p><label for="password">Password:</label>';
       echo '<input type="password" name="password" id="password" required></p>';
-      echo '</fieldset>';
       echo '<button type="submit" name="login">Login</button>';
       echo '</form>';
+      echo '</div>';
 
     }
   }

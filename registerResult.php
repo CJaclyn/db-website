@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Homework Tracker</h2>
+  <h1>Homework Tracker</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -36,12 +36,12 @@
     VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$birthday', '$college', '$major')";
     if(mysqli_query($db, $formQuery)){
         echo "<div id='successful'>";
-        echo "<h1>Successfully registered!</h1>";
+        echo "<h2>Successfully registered!</h2>";
         echo "<a href='index.html'>Return to Homepage</a>";
         echo "</div>";
     } else{
         echo "<div id='error'>";
-        echo "<h1>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Registration%20Error' target='_top'>Jaclyn Cao.</a></h1>";
+        echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Registration%20Error' target='_top'>Jaclyn Cao.</a></h2>";
         //echo "ERROR: Could not able to execute $formQuery. ".mysqli_error($db);
         echo "</div>";
     }

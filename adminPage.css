@@ -9,6 +9,10 @@ td, th {
   padding: 1.3rem;
 }
 
+tr:nth-child(even){
+  background-color: white;
+}
+
 button {
   cursor: pointer;
   padding: .5rem 1.5rem;

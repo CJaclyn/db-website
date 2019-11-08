@@ -1,0 +1,27 @@
+/*not logged In css*/
+
+#error {
+  text-align: center;
+  background-color: white;
+  margin: 10rem 25rem;
+  padding: 1rem;
+  padding-bottom: 5rem;
+}
+
+#error h1 {
+  margin-bottom: 2.5rem;
+}
+
+#error a {
+  display: block;
+  color: #586f7c;
+}
+
+#error a:first-of-type {
+  margin-bottom: 1rem;
+}
+
+#error a:hover {
+  color: #b8dbd9;
+  transition: .5s;
+}

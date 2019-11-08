@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="assignments.css">
+<link rel="stylesheet" href="errormsg.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>

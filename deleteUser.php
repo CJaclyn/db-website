@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Homework Tracker</h2>
+  <h1>Homework Tracker</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -25,8 +25,7 @@
   $parseURL = strval(parse_url($url, PHP_URL_QUERY));
   $user = strval(explode('=', $parseURL)[0]);
   echo "<div id='container'>";
-  echo "<h1>Are you sure you want to delete user <span id='black'>".$user."</span>?</h1>";
-  echo "<p>Deleting a user is PERMANENT!</p>";
+  echo "<h2>Are you sure you want to delete user <span id='black'>".$user."</span>?</h2>";
   echo "<a href='adminPage.php'>Return to Admin Page</a>";
    ?>
 
@@ -40,22 +39,24 @@
 </div>
 
   <?php
-  $password = $_POST['password'];
-  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-  $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
-  $deleteQuery = "DELETE FROM user WHERE username='$user'";
+  if(isset($_POST['password'])){
+    $password = $_POST['password'];
+    //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
+    $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
+    $deleteQuery = "DELETE FROM user WHERE username='$user'";
 
-  if($password == "admin"){
-    if(mysqli_query($db, $deleteQuery)){
-        echo "<a href='index.html'>Return to Admin Page</a>";
-        echo "</div>";
-    } else{
-        echo "<div id='error'>";
-        echo "<h1>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Deletion%20Error' target='_top'>Jaclyn Cao.</a></h1>";
-        //echo "ERROR: Could not able to execute $deleteQuery. ".mysqli_error($db);
-        echo "</div>";
+    if($password == "admin"){
+      if(mysqli_query($db, $deleteQuery)){
+          echo "<a href='index.html'>Return to Admin Page</a>";
+          echo "</div>";
+      } else{
+          echo "<div id='error'>";
+          echo "<h1>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Deletion%20Error' target='_top'>Jaclyn Cao.</a></h1>";
+          //echo "ERROR: Could not able to execute $deleteQuery. ".mysqli_error($db);
+          echo "</div>";
+      }
+      mysqli_close($db);
     }
-    mysqli_close($db);
   }
    ?>
 

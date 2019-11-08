@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="adminPage.css">
 </head>
 <body>
-  <h2>Homework Tracker</h2>
+  <h1>Homework Tracker</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>

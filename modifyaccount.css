@@ -1,0 +1,35 @@
+h2 {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: white;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  padding: 3rem;
+}
+
+select{
+  margin-right: 1.5rem;
+}
+
+button {
+  margin-left: 1rem;
+  border: none;
+  text-decoration: none;
+  padding: .4rem 1rem;
+  background-color: #58657C;
+  color: white;
+  cursor: pointer;
+}
+
+#centered {
+  text-align: center;
+}
+
+#centered a:hover {
+  color: #B8DBD9;
+}

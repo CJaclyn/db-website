@@ -5,12 +5,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Classes</title>
+<title>Account</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
-<link rel="stylesheet" href="classes.css">
+<link rel="stylesheet" href="account.css">
+<link rel="stylesheet" href="errormsg.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <h1>Homework Tracker</h1>
@@ -33,30 +35,24 @@
         </ul>
       </nav>";
 
-      echo "<h1 id='header'>Classes</h1>";
+      $usersQuery = "SELECT firstname, lastname, DATE_FORMAT(birthday, '%b %e, %Y') birthday, college, major from user where username='".$username."'";
 
-      $query = "SELECT * FROM class WHERE username='".$username."' ORDER BY className ASC";
+      $users = mysqli_query($db, $usersQuery);
+      mysqli_query($db, $usersQuery) or die('Error querying database.');
+      $row = mysqli_fetch_array($users);
 
-      $classes = mysqli_query($db, $query);
-
-      echo "<form method=\"get\" action=\"classes.php\">";
+      echo"<div id='container'>";
+      echo "<h2>Your Account</h2>";
+      echo "<div class='center'><img src='generic-user.png' width='150'></div>";
+      echo "<h3>".$row['firstname']." ".$row['lastname']."</h3>";
       echo "<table>";
-      echo "<tr> <th>Class ID</th> <th>Class Name</th> <th>Teacher</th> <th>Email</th></tr>";
-      if(mysqli_query($db, $query)){
-        while ($row = mysqli_fetch_array($classes)) {
-          echo "<tr>";
-          echo "<td>".$row['classID']."</td>";
-          echo "<td>".$row['className']."</td>";
-          echo "<td>".$row['teacher']."</td>";
-          echo "<td>".$row['email']."</td>";
-          echo "<td><button type=\"submit\" name='".$row['classID']."'>"."Delete</button></td>";
-        }
+      echo "<tr><th>Birthday</th> <th>College</th> <th>Major</th> </tr>";
+      echo "<td>".$row['birthday']."</td>";
+      echo "<td>".$row['college']."</td>";
+      echo "<td>".$row['major']."</td>";
       echo "</table>";
-      echo "</form>";
-
-      }else {
-        echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
-      }
+      echo "<div class='center'><a href='modifyacc.php'>Modify Information</a></div>";
+      echo "</div>";
 
       mysqli_close($db);
     }
