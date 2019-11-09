@@ -29,7 +29,7 @@
   </nav>
 <?php
 
-  header( "refresh:2;url=index.html" );
+  header( "refresh:1;url=index.html" );
   if (!empty($old_user))
   {
     logOut();

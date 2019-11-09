@@ -17,7 +17,7 @@
 }
 
 #centered a:hover {
-  color: black;
+  color: #b8dbd9;
   transition: .5s;
 }
 
@@ -28,10 +28,9 @@
 .row-container {
   margin-top: 3rem;
   background-color: #2f4550;
-  margin-right: 10rem;
-  margin-left: 10rem;
-  box-shadow: 3px 3px 5px black;
-  padding: .5rem;
+  margin-right: 20rem;
+  margin-left: 20rem;
+  padding: 3rem;
 }
 
 .row:after {
@@ -79,10 +78,12 @@ div .r {
 }
 
 div .r a {
+  font-size: 1.1rem;
   color: #2f4550;
   text-decoration: none;
-  padding: .4rem 1rem;
+  padding: .5rem 2.8rem;
   background-color: white;
+  border-radius: 5px;
 }
 
 .row:last-child{

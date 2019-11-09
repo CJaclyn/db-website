@@ -68,7 +68,8 @@
       $updateCollegeQuery = "UPDATE user SET college = '$input' WHERE username='".$username."'";
 
       if(mysqli_query($db, $updateCollegeQuery)){
-          echo "<h3>Success!</h3>";
+        echo "<script type='text/javascript'>alert('College successfully changed!');</script>";
+        header( "refresh:1;url=account.php" );
       } else{
           //echo "ERROR: Could not able to execute $updateCollegeQuery. " . mysqli_error($db);
           echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
@@ -78,7 +79,8 @@
       $updateMajorQuery = "UPDATE user SET major = '$input' WHERE username='".$username."'";
 
       if(mysqli_query($db, $updateMajorQuery)){
-          echo "Success!";
+          echo "<script type='text/javascript'>alert('Major successfully changed!');</script>";
+          header( "refresh:1;url=account.php" );
       } else{
           //echo "ERROR: Could not able to execute $updateMajorQuery. " . mysqli_error($db);
           echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
