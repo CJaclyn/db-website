@@ -67,7 +67,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
     {
       if (isset($username))
       {
-        echo '<p>Invalid credentials.</p>';
+        echo "<script type='text/javascript'>alert('Your username or password is wrong.');</script>";
       }
 
       echo '<h2>User Login</h2>';
