@@ -40,9 +40,9 @@
         echo "<a href='index.html'>Return to Homepage</a>";
         echo "</div>";
     } else{
+        //echo "ERROR: Could not able to execute $formQuery. ".mysqli_error($db);
         echo "<div id='error'>";
         echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Registration%20Error' target='_top'>Jaclyn Cao.</a></h2>";
-        //echo "ERROR: Could not able to execute $formQuery. ".mysqli_error($db);
         echo "</div>";
     }
     mysqli_close($db);

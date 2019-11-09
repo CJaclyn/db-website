@@ -34,7 +34,7 @@
       </nav>";
 
       echo "<h1 id='header'>Assignments</h1>";
-      echo "<a href='addAssignments.php'>Add Assignments</a>";
+      echo "<div id='centered'><a href='addAssignments.php'>Add Assignments</a></div>";
 
       $query = "SELECT class.className, class.email, assignmentType, assignmentName, DATE_FORMAT(dueDate, '%a %b %e, %Y') dueDate
       FROM assignment
@@ -44,9 +44,10 @@
       ORDER BY dueDate ASC";
 
       $assignments = mysqli_query($db, $query);
+      echo "<div id='container'>";
       if(mysqli_query($db, $query)){
         while ($row = mysqli_fetch_array($assignments)) {
-          echo "<div class='container'>";
+          echo "<div class='row-container'>";
           echo "<div class=\"row\">";
           echo "<div class=\"column left\">";
           echo "<h4>Type</h4>";
@@ -77,9 +78,12 @@
           echo "</div>";
           echo"</div>";
         }
-
+        echo "</div>";
       }else {
-        echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
+        //echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
+        echo "<div id='error'>";
+        echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
+        echo "</div>";
       }
 
       mysqli_close($db);

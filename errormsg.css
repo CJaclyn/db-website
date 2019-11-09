@@ -3,13 +3,13 @@
 #error {
   text-align: center;
   background-color: white;
-  margin: 10rem 25rem;
-  padding: 1rem;
-  padding-bottom: 5rem;
+  margin: 10rem 30rem;
+  padding: 3rem;
 }
 
-#error h1 {
+#error h2 {
   margin-bottom: 2.5rem;
+  color: black;
 }
 
 #error a {

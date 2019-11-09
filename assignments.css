@@ -8,12 +8,30 @@
   margin-top: 5rem;
 }
 
-.container {
+#centered {
+  text-align: center;
+}
+
+#centered a {
+  color: #2f4550;
+}
+
+#centered a:hover {
+  color: black;
+  transition: .5s;
+}
+
+#container {
+  margin-bottom: 10rem;
+}
+
+.row-container {
   margin-top: 3rem;
   background-color: #2f4550;
   margin-right: 10rem;
   margin-left: 10rem;
   box-shadow: 3px 3px 5px black;
+  padding: .5rem;
 }
 
 .row:after {

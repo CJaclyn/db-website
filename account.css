@@ -43,3 +43,8 @@ td, th {
 #container a {
   color: #58657C;
 }
+
+#container a:hover {
+  transition: .5s;
+  color: #B8DBD9;
+}

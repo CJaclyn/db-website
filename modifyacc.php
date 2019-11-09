@@ -39,7 +39,7 @@
 
       echo "
         <form method='POST' action=''>
-          <label for='choice'>Select What to Modify</label>
+          <label for='choice'>What to Modify</label>
           <select name='choice' id='choice'>
             <option value='college'>College</option>
             <option value='major'>Major</option>
@@ -70,7 +70,8 @@
       if(mysqli_query($db, $updateCollegeQuery)){
           echo "<h3>Success!</h3>";
       } else{
-          echo "ERROR: Could not able to execute $updateMajorQuery. " . mysqli_error($db);
+          //echo "ERROR: Could not able to execute $updateCollegeQuery. " . mysqli_error($db);
+          echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
       }
     }
     if($choice == 'major'){
@@ -79,7 +80,8 @@
       if(mysqli_query($db, $updateMajorQuery)){
           echo "Success!";
       } else{
-          echo "ERROR: Could not able to execute $updateMajorQuery. " . mysqli_error($db);
+          //echo "ERROR: Could not able to execute $updateMajorQuery. " . mysqli_error($db);
+          echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
       }
     }
   }

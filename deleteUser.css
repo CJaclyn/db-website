@@ -22,6 +22,10 @@
   color: red;
 }
 
+#container a {
+  color: red;
+}
+
 #container a:hover {
   color: #2f4550;
   transition: .5s;

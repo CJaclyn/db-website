@@ -33,15 +33,15 @@
         </ul>
       </nav>";
 
-      echo "<h1 id='header'>Classes</h1>";
-
       $query = "SELECT * FROM class WHERE username='".$username."' ORDER BY className ASC";
 
       $classes = mysqli_query($db, $query);
 
+      echo "<div id='centered'>";
       echo "<form method=\"get\" action=\"classes.php\">";
+      echo "<h2 id='header'>Your Classes</h2>";
       echo "<table>";
-      echo "<tr> <th>Class ID</th> <th>Class Name</th> <th>Teacher</th> <th>Email</th></tr>";
+      echo "<tr><th>Class ID</th> <th>Class Name</th> <th>Teacher</th> <th>Email</th></tr>";
       if(mysqli_query($db, $query)){
         while ($row = mysqli_fetch_array($classes)) {
           echo "<tr>";
@@ -50,12 +50,17 @@
           echo "<td>".$row['teacher']."</td>";
           echo "<td>".$row['email']."</td>";
           echo "<td><button type=\"submit\" name='".$row['classID']."'>"."Delete</button></td>";
+          echo "</tr>";
         }
       echo "</table>";
       echo "</form>";
+      echo "</div>";
 
       }else {
-        echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
+        //echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
+        echo "<div id='error'>";
+        echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
+        echo "</div>";
       }
 
       mysqli_close($db);
