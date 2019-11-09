@@ -1,11 +1,11 @@
 <?php
   session_start();
-
-  // store to test if they *were* logged in
-  $old_user = $_SESSION['valid_user'];
-  unset($_SESSION['valid_user']);
-  session_destroy();
+  if(isset($_SESSION['valid_user'])){
+      $old_user = $_SESSION['valid_user'];
+  }
+  include('loginCheck.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +28,18 @@
     </ul>
   </nav>
 <?php
+
   header( "refresh:2;url=index.html" );
   if (!empty($old_user))
   {
-    echo '<h2>You are now logged out.';
+    logOut();
+    echo '<h2>You are now logged out.</h2>';
     echo '<p>Returning to homepage. . .</p>';
   }
   else
   {
     echo '<h2>You were not logged in, and so have not been logged out.</h2>';
+    echo '<p>Returning to homepage. . .</p>';
   }
 ?>
 

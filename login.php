@@ -1,26 +1,7 @@
 <?php
 session_start();
-
-if (isset($_POST['username']) && isset($_POST['password']))
-{
-  // if the user has just tried to log in
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-  $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
-
-  $query = "SELECT * FROM user WHERE
-  username='".$username."' AND
-  password='".$password."'";
-
-  $result = $db->query($query);
-  if ($result->num_rows)
-  {
-    $_SESSION['valid_user'] = $username;
-  }
-  $db->close();
-}
+include('loginCheck.php');
+login();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +17,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
   <h1>Homework Tracker</h1>
 
   <?php
-    if (isset($_SESSION['valid_user'])){
+  if (isLoggedIn()){
 
       $username = $_SESSION['valid_user'];
 

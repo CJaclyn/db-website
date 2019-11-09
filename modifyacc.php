@@ -21,9 +21,8 @@
   //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
   $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
 
-    // check session variable
-    if (isset($_SESSION['valid_user']))
-    {
+  include('loginCheck.php');
+  if (isLoggedIn()){
       $username = $_SESSION['valid_user'];
 
       echo "
@@ -55,20 +54,7 @@
 
     else
     {
-      echo
-      "<nav>
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"register.html\">Sign-up</a></li>
-          <li><a href=\"login.php\">Login</a></li>
-          <li><a href=\"about.html\">About</a></li>
-          <li><a href=\"adminLogin.html\">Admin</a></li>
-        </ul>
-      </nav>";
-
-      echo '<div id="error"><h1>You need to login to see this page.</h1>';
-      echo "<a href='login.php'>Login</a>";
-      echo "<a href='index.html'>Go to homepage</a></div>";
+      notLoggedIn();
     }
   ?>
 
