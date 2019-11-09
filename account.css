@@ -48,3 +48,10 @@ td, th {
   transition: .5s;
   color: #B8DBD9;
 }
+
+@media only screen and (max-width: 1368px){
+  #container {
+    margin-right: 15rem;
+    margin-left: 15rem;
+  }
+}
