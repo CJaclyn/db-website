@@ -30,6 +30,11 @@ button {
   text-align: center;
 }
 
+#centered  a {
+  color: #2f4550;
+}
+
 #centered a:hover {
+  transition: .5s;
   color: #B8DBD9;
 }

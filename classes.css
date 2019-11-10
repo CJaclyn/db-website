@@ -1,22 +1,52 @@
-h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  margin-top: -2rem;
+body {
+  background-color: white;
 }
 
-form {
-  margin-top: 10rem;
-  background-color: white;
-  margin-left: 25rem;
-  margin-right: 25rem;
+#header h2 {
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: -2rem;
+  color: #2f4550;
+  font-size: 2.5rem;
+}
+
+#centered {
+  margin-top: 5rem;
   padding: 5rem;
+  text-align: center;
 }
 
 table {
   width: 100%;
   text-align: left;
+  margin-bottom: 4rem;
 }
 
 td,th {
   padding: .5rem;
+}
+
+th {
+  color: white;
+  background-color: #b8dbd9;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+td {
+  font-size: 1.1rem;
+}
+
+table td a {
+  color: red;
+}
+
+#addclass a {
+  color: #2f4550;
+  font-size: 1.1rem;
+}
+
+#addclass a:hover {
+  color: #b8dbd9;
+  transition: .5s;
 }

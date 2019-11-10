@@ -2,10 +2,11 @@
   box-sizing: border-box;
 }
 
-/*logged in css*/
 #header {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 5rem;
+  color: #2f4550;
+  text-align: center;
 }
 
 #centered {
@@ -14,11 +15,7 @@
 
 #centered a {
   color: #2f4550;
-}
-
-#centered a:hover {
-  color: #b8dbd9;
-  transition: .5s;
+  font-size: 1.1rem;
 }
 
 #container {
@@ -28,9 +25,9 @@
 .row-container {
   margin-top: 3rem;
   background-color: #2f4550;
-  margin-right: 20rem;
-  margin-left: 20rem;
-  padding: 3rem;
+  margin-right: 16rem;
+  margin-left: 16rem;
+  padding: 1rem;
 }
 
 .row:after {
@@ -41,12 +38,13 @@
 
 div h4{
   color: white;
-  opacity: 0.3;
+  opacity: 0.75;
 }
 
 div h2 {
   margin-top: -1rem;
   color: white;
+  font-size: 1.5rem;
 }
 
 div .column {
@@ -70,7 +68,12 @@ div .right {
 }
 
 div .l {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+}
+
+div .l a {
+  color: #B8DBD9; 
+  font-size: 1.4rem;
 }
 
 div .r {
@@ -88,4 +91,9 @@ div .r a {
 
 .row:last-child{
   margin-bottom: 4rem;
+}
+
+#centered a:hover {
+  transition: .5s;
+  color: #B8DBD9;
 }

@@ -11,7 +11,7 @@ login();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="login.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <h1>Homework Tracker</h1>
@@ -30,10 +30,10 @@ login();
         </ul>
       </nav>";
 
-      echo '<p>Welcome '.$_SESSION['valid_user'].'!<br />';
-      echo '<p><a href="account.php">Your account</a></p>';
-      echo '<p><a href="assignments.php">View assignments</a></p>';
-      echo '<p><a href="classes.php">View classes</a></p>';
+      echo '<div id="centered"><p>Welcome '.$_SESSION['valid_user'].'!</p>';
+      echo '<a href="account.php">Your account</a>';
+      echo '<a href="assignments.php">View assignments</a>';
+      echo '<a href="classes.php">View classes</a></div>';
     }
     else{
     echo "<nav>
@@ -53,7 +53,6 @@ login();
 
       echo '<h2>User Login</h2>';
       //login form
-      echo '<div id="form">';
       echo '<form action="login.php" method="post">';
       echo '<p><label for="username">Username:</label>';
       echo '<input type="text" name="username" id="username" required></p>';
@@ -61,7 +60,6 @@ login();
       echo '<input type="password" name="password" id="password" required></p>';
       echo '<button type="submit" name="login">Login</button>';
       echo '</form>';
-      echo '</div>';
 
     }
   }

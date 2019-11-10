@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="assignments.css">
 <link rel="stylesheet" href="errormsg.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <h1>Homework Tracker</h1>
@@ -69,12 +69,16 @@
           echo "<div class=\"column l\">";
           echo "<h4>Due Date</h4>";
           echo "<h2>".$row['dueDate']."</h2>";
+          $assignmentName = $row['assignmentName'];
+          echo "<a href='deleteAssignment.php?id=".$assignmentName."'>Delete</a>";
           echo "</div>";
+
           echo "<div class=\"column r\">";
-          $email = $row['email'];
           echo "<h4>Email Teacher</h4>";
+          $email = $row['email'];
           echo "<a href=\"mailto:$email?Subject=Homework%20Help\" target='_top'>Help</a>";
           echo "</div>";
+
           echo "</div>";
           echo"</div>";
         }

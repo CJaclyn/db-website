@@ -3,7 +3,7 @@ h2 {
   margin-top: 8rem;
 }
 
-#form {
+form {
   text-align: center;
   margin-top: 3rem;
 }
@@ -39,4 +39,30 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+/*logged in*/
+#centered p {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2rem;
+  color: #2f4550;
+  margin-bottom: 3rem;
+}
+#centered {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+#centered a {
+  text-decoration: none;
+  background-color: #2f4550;
+  padding: 1rem;
+  color: white;
+  margin: 1rem;
+}
+
+#centered a:hover {
+  background-color: #b8dbd9;
+  transition: .5s;
 }

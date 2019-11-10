@@ -1,16 +1,18 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
 }
 
 /*website header/logo*/
-h1 {
+h1:first-of-type {
   font-size: 1.5rem;
-  padding-top: .5rem;
+  padding: 2rem;
   text-align: center;
   color: #2f4550;
+  background-color: #f4f4f9;
+  margin: 0
 }
 
 /*navbar position & styling*/

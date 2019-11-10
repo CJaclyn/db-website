@@ -11,12 +11,13 @@
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="classes.css">
 <link rel="stylesheet" href="errormsg.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <h1>Homework Tracker</h1>
 
   <?php
+  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
   $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
 
   include('loginCheck.php');
@@ -38,7 +39,6 @@
       $classes = mysqli_query($db, $query);
 
       echo "<div id='centered'>";
-      echo "<form method=\"get\" action=\"classes.php\">";
       echo "<h2 id='header'>Your Classes</h2>";
       echo "<table>";
       echo "<tr><th>Class ID</th> <th>Class Name</th> <th>Teacher</th> <th>Email</th></tr>";
@@ -49,13 +49,12 @@
           echo "<td>".$row['className']."</td>";
           echo "<td>".$row['teacher']."</td>";
           echo "<td>".$row['email']."</td>";
-          echo "<td><button type=\"submit\" name='".$row['classID']."'>"."Delete</button></td>";
+          echo "<td><a href='deleteClass.php?id=".$row['classID']."'>Delete</a></td>";
           echo "</tr>";
         }
       echo "</table>";
-      echo "</form>";
+      echo "<div id='addclass'><a href='addClasses.php'>Add Classes</a></div>";
       echo "</div>";
-
       }else {
         //echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
         echo "<div id='error'>";

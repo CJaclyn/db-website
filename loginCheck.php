@@ -52,7 +52,7 @@ function notLoggedIn(){
 		</ul>
 	</nav>";
 
-	echo '<div id="error"><h1>You need to login to see this page.</h1>';
+	echo '<div id="error"><h2>You need to login to see this page.</h2>';
 	echo "<a href='login.php'>Login</a>";
 	echo "<a href='index.html'>Go to homepage</a></div>";
 }
