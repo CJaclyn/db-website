@@ -39,8 +39,8 @@
           echo "
           <label for='classID'>Class ID *</label>
           <input type='text' name='classID' id='classID' required maxlength='10'>
-          <label for='name'>Class Name *</label>
-          <input type='text' name='name' id='name' required maxlength='30'>
+          <label for="Name'>Class Name *</label>
+          <input type='text' name="Name' id="Name' required maxlength='30'>
           <label for='teacher'>Teacher *</label>
           <input type='text' name='teacher' id='teacher' required maxlength='15'>
           <label for='email'>Email</label>
@@ -75,7 +75,7 @@
       header( "refresh:.5;url=classes.php" );
     }
     else {
-      //echo "ERROR: Could not able to execute $addQuery. ".mysqli_error($db);
+      //echo "ERROR: Could not able to execute $stmt. ".mysqli_error($db);
       echo "<div id='error'>";
       echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
       echo "</div>";

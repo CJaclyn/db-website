@@ -57,8 +57,8 @@
             <option value='Project' name='project'>Project</option>
             <option value='Test' name='test'>Test</option>
           </select>
-          <label for='name'>Assignment Name</label>
-          <input type='text' name='name' id='name' required>
+          <label for="Name'>Assignment Name</label>
+          <input type='text' name="Name' id="Name' required>
           <label for='due-date'>Due Date</label>
           <input type='date' name='due-date' id='due-date' required>
           <br>

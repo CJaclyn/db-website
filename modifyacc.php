@@ -44,8 +44,8 @@
             <option value='college'>College</option>
             <option value='major'>Major</option>
             </select>
-          <label for='new-info'>Enter New Information</label>
-          <input type='text' name='new-info' id='new-info'></input>
+          <label for="New-info'>Enter New Information</label>
+          <input type='text' name="New-info' id="New-info'></input>
           <button type='submit'>Modify</button>
         </form>";
 
