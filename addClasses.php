@@ -28,7 +28,6 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
@@ -39,8 +38,8 @@
           echo "
           <label for='classID'>Class ID *</label>
           <input type='text' name='classID' id='classID' required maxlength='10'>
-          <label for="Name'>Class Name *</label>
-          <input type='text' name="Name' id="Name' required maxlength='30'>
+          <label for='name'>Class Name *</label>
+          <input type='text' name='name' id='Name' required maxlength='30'>
           <label for='teacher'>Teacher *</label>
           <input type='text' name='teacher' id='teacher' required maxlength='15'>
           <label for='email'>Email</label>

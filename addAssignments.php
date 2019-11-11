@@ -28,7 +28,7 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
+          
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
@@ -57,8 +57,8 @@
             <option value='Project' name='project'>Project</option>
             <option value='Test' name='test'>Test</option>
           </select>
-          <label for="Name'>Assignment Name</label>
-          <input type='text' name="Name' id="Name' required>
+          <label for='name'>Assignment Name</label>
+          <input type='text' name='name' id='name' required>
           <label for='due-date'>Due Date</label>
           <input type='date' name='due-date' id='due-date' required>
           <br>
@@ -90,15 +90,17 @@
     $name = $_POST['name'];
     $dueDate = $_POST['due-date'];
 
-    $addQuery = "INSERT INTO assignment VALUES(DEFAULT, '".$username."', '".$class."', '".$type."', '".$name."', '".$dueDate."')";
+    $stmt = mysqli_prepare($db, "INSERT INTO assignment VALUES(DEFAULT, ?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt,"sssss", $username, $class, $type, $name, $dueDate);
 
-    if(mysqli_query($db, $addQuery)){
+
+    if($stmt->execute()){
       echo "Success!";
       echo "<script type='text/javascript'>alert('Assignment successfully added!');</script>";
       header( "refresh:.5;url=assignments.php" );
     }
     else {
-      echo "ERROR: Could not able to execute $addQuery. ".mysqli_error($db);
+      //echo "ERROR: Could not able to execute $stmt. ".mysqli_error($db);
       echo "<div id='error'>";
       echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
       echo "</div>";

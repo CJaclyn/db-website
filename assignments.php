@@ -27,7 +27,7 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
+
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
@@ -36,12 +36,14 @@
       echo "<h1 id='header'>Assignments</h1>";
       echo "<div id='centered'><a href='addAssignments.php'>Add Assignments</a></div>";
 
-      $query = "SELECT class.className, class.email, assignmentType, assignmentName, DATE_FORMAT(dueDate, '%a %b %e, %Y') dueDate
+      $query = "SELECT class.className, class.email, assignmentType, assignmentName, DATE_FORMAT(dueDate, '%b %e %Y') dueDate
       FROM assignment
       INNER JOIN class on class.classID = assignment.classID
       AND class.username = assignment.username
       WHERE class.username='".$username."'
       ORDER BY dueDate ASC";
+
+      //DATE_FORMAT(dueDate, '%a %b %e %Y') dueDate
 
       $assignments = mysqli_query($db, $query);
       echo "<div id='container'>";

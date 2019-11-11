@@ -29,7 +29,7 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
+          
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
@@ -44,8 +44,8 @@
             <option value='college'>College</option>
             <option value='major'>Major</option>
             </select>
-          <label for="New-info'>Enter New Information</label>
-          <input type='text' name="New-info' id="New-info'></input>
+          <label for='new-info'>Enter New Information</label>
+          <input type='text' name='new-info' id='new-info'></input>
           <button type='submit'>Modify</button>
         </form>";
 

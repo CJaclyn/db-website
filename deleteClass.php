@@ -29,20 +29,26 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
+
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
       </nav>";
 
-      $query = "DELETE FROM class WHERE classID = '".$classID."'";
+      $deleteAssignmentsQuery = "DELETE FROM assignment WHERE classID = '".$classID."'";
 
-      if(mysqli_query($db, $query)){
-        echo "<script type='text/javascript'>alert('Class successfully deleted!');</script>";
-        header( "refresh:.5;url=classes.php" );
-      } else{
-          //echo "ERROR: Could not able to execute $query. " . mysqli_error($db);
+      if(mysqli_query($db, $deleteAssignmentsQuery)){
+        $deleteClassQuery = "DELETE FROM class WHERE classID = '".$classID."'";
+        if(mysqli_query($db, $deleteClassQuery)){
+          echo "<script type='text/javascript'>alert('Class successfully deleted!');</script>";
+          header( "refresh:.5;url=classes.php" );
+        }else{
+          echo "ERROR: Could not able to execute $deleteClassQuery. " . mysqli_error($db);
           echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
+        }
+      } else{
+        echo "ERROR: Could not able to execute $deleteAssignmentsQuery. " . mysqli_error($db);
+        echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
       }
 
       mysqli_close($db);

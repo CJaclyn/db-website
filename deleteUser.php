@@ -47,8 +47,8 @@
 
     if($password == "admin"){
       if(mysqli_query($db, $deleteQuery)){
-          echo "<a href='index.html'>Return to Admin Page</a>";
-          echo "</div>";
+        echo "<script type='text/javascript'>alert('User successfully deleted!');</script>";
+        header( "refresh:1;url=adminPage.php" );
       } else{
           echo "<div id='error'>";
           echo "<h1>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Deletion%20Error' target='_top'>Jaclyn Cao.</a></h1>";
@@ -69,7 +69,6 @@
        document.getElementById("validate-adminP").innerHTML = "Admin password invalid.";
        return false;
      }else {
-       alert("User succesfully deleted.");
        document.getElementById("validate-adminP").innerHTML = "";
        return true;
      }

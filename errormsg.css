@@ -22,6 +22,5 @@
 }
 
 #error a:hover {
-  color: #b8dbd9;
   transition: .5s;
 }

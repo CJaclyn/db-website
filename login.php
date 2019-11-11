@@ -24,7 +24,7 @@ login();
       echo "<nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
+          
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>
@@ -41,7 +41,7 @@ login();
         <li><a href=\"index.html\">Home</a></li>
         <li><a href=\"register.html\">Sign-up</a></li>
         <li><a href=\"login.php\">Login</a></li>
-        <li><a href=\"about.html\">About</a></li>
+        
         <li><a href=\"adminLogin.html\">Admin</a></li>
       </ul>
     </nav>";
