@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS ics311fa190304;
 create database ics311fa190304;
 use ics311fa190304;
 
@@ -22,7 +23,8 @@ teacher varchar(15) not null,
 email varchar(45),
 primary key(classID, username),
 constraint FK_username foreign key (username)
-references user(username)
+	references user(username)
+	ON DELETE CASCADE
 );
 
 create table assignment
@@ -33,10 +35,12 @@ assignmentType char(8) not null,
 assignmentName varchar(25) not null,
 dueDate date not null,
 primary key(assignmentID),
-	constraint FK_userTable foreign key (username)
-	references user(username), 
-	constraint FK_classID foreign key (classID)
+constraint FK_userTable foreign key (username)
+	references user(username)
+	ON DELETE CASCADE,
+constraint FK_classID foreign key (classID)
 	references class(classID)
+	ON DELETE CASCADE
 );
 
 insert into user values
