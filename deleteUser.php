@@ -41,8 +41,8 @@
   <?php
   if(isset($_POST['password'])){
     $password = $_POST['password'];
-    //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-    $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
+    include('connection.php');
+    
     $deleteQuery = "DELETE FROM user WHERE username='$user'";
 
     if($password == "admin"){

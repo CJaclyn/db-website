@@ -30,8 +30,8 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-    $db = mysqli_connect('localhost','root','12345','ics311fa190304') or die('Error connecting to MySQL server.');
+    include('connection.php');
+
     $formQuery = "INSERT INTO user (username, password, email, firstname, lastname, birthday, college, major)
     VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$birthday', '$college', '$major')";
     if(mysqli_query($db, $formQuery)){

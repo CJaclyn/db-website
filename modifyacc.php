@@ -18,10 +18,9 @@
   <h1>Homework Tracker</h1>
 
   <?php
-  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-  $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
-
+  include('connection.php');
   include('loginCheck.php');
+  
   if (isLoggedIn()){
       $username = $_SESSION['valid_user'];
 
@@ -29,7 +28,7 @@
       <nav>
         <ul>
           <li><a href=\"index.html\">Home</a></li>
-          
+
           <li><a href=\"login.php\">$username</a></li>
           <li><a href=\"logout.php\">Logout</a></li>
         </ul>

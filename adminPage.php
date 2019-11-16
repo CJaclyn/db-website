@@ -20,8 +20,7 @@
 
   <?php
 
-  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-  $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
+  include('connection.php');
   $usersQuery = "SELECT username, email, create_time from user";
 
   $users = mysqli_query($db, $usersQuery);

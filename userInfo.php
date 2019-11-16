@@ -25,8 +25,8 @@
   $user = strval(explode('=', $parseURL)[0]);
   echo "<h2>"."User Information - ".$user."</h2>";
 
-  //$db = mysqli_connect('localhost', 'ics311fa190304', '8736', 'ics311fa190304') or die('Error connecting to MySQL server.');
-  $db = mysqli_connect('localhost', 'root', '12345', 'ics311fa190304') or die('Error connecting to MySQL server.');
+  include('connection.php');
+
   $usersQuery = "SELECT firstname, lastname, DATE_FORMAT(birthday, '%b %e, %Y') birthday, college, major from user where username='$user'";
 
   $users = mysqli_query($db, $usersQuery);
