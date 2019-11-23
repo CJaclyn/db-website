@@ -5,8 +5,11 @@ body {
 form {
   padding: 2rem;
   margin-top: 5rem;
-  text-align: center;
   margin-bottom: 2rem;
+  text-align: center;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form h2 {
@@ -14,10 +17,11 @@ form h2 {
   font-size: 2rem;
   margin-bottom: 4rem;
   background-color: #B8DBD9;
-  margin-right: 20rem;
-  margin-left: 20rem;
   padding: 1rem;
   color: white;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form input, select {
@@ -30,7 +34,7 @@ form label {
 }
 
 form input, select {
-  width: 20%;
+  width: 45%;
 }
 
 form select {

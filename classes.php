@@ -1,5 +1,7 @@
 <?php
   session_start();
+  include('connection.php');
+  include('loginfunctions.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,28 +12,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="classes.css">
-<link rel="stylesheet" href="errormsg.css">
+<link rel="stylesheet" href="dberror.css">
+
 
 </head>
 <body>
   <h1>Homework Tracker</h1>
 
   <?php
-  include('connection.php');
-  include('loginCheck.php');
-  
   if (isLoggedIn()){
-      $username = $_SESSION['valid_user'];
-
-      echo "
-      <nav>
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-
-          <li><a href=\"login.php\">$username</a></li>
-          <li><a href=\"logout.php\">Logout</a></li>
-        </ul>
-      </nav>";
 
       $query = "SELECT * FROM class WHERE username='".$username."' ORDER BY className ASC";
 
@@ -56,7 +45,7 @@
       echo "</div>";
       }else {
         //echo "ERROR: Could not able to execute $query. ".mysqli_error($db);
-        echo "<div id='error'>";
+        echo "<div class='errormsg'>";
         echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
         echo "</div>";
       }

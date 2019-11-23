@@ -8,12 +8,12 @@ form {
   margin-top: 3rem;
 }
 
-form label {
-  font-size: 1.1rem;
-}
-
 form label, input {
   margin-bottom: 1rem;
+}
+
+form label {
+  font-size: 1.1rem;
 }
 
 form input {

@@ -12,11 +12,11 @@
   <h1>Homework Tracker</h1>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Sign-up</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="register.php">Sign-up</a></li>
       <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="adminLogin.html">Admin</a></li>
+      <li><a href="adminlogin.php">Admin</a></li>
     </ul>
   </nav>
 

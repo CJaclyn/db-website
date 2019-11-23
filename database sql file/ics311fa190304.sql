@@ -4,14 +4,15 @@ use ics311fa190304;
 
 create table user
 (username varchar(20) not null,
-password varchar(20) not null,
+password varchar(50) not null,
 email varchar(45) not null unique,
 firstName varchar(15) not null,
 lastName varchar(20) not null,
 birthday date not null,
 college varchar(45) not null,
-major varchar(30) not null,
+major varchar(30),
 create_time timestamp default current_timestamp,
+admin tinyint(1) not null default '0',
 primary key (username)
 );
 
@@ -44,10 +45,10 @@ constraint FK_classID foreign key (classID)
 );
 
 insert into user values
-("jaclync", "12345", "jaclync@email.com", "Jaclyn", "Cao", "1965-01-01", "Metro State", "CIT", NOW()),
-("totoc", "12345", "totoc@email.com", "Toto", "Cao", "2007-07-08", "Dog University", "Barking", NOW()),
-("bob123", "12345", "bobert@email.com", "Bob", "Ert", "2001-09-20", "Bobsled University", "Bobsledding", NOW()),
-("testacc", "12345", "testacc@email.com", "Tess", "Tacc", "1990-10-01", "Testing University", "Testing", NOW());
+("jaclync", SHA1("12345"), "jaclync@email.com", "Jaclyn", "Cao", "1965-01-01", "Metro State", "CIT", NOW(), 1),
+("totoc", SHA1("12345"), "totoc@email.com", "Toto", "Cao", "2007-07-08", "Dog University", "Barking", NOW(), 0),
+("bob123", SHA1("12345"), "bobert@email.com", "Bob", "Ert", "2001-09-20", "Bobsled University", "Bobsledding", NOW(), 0),
+("testacc", SHA1("12345"), "testacc@email.com", "Tess", "Tacc", "1990-10-01", "Testing University", "Testing", NOW(), 0);
 
 insert into class values
 ("MATH123", "bob123", "Calculus II", "Teech Er", "teech.er@email.edu"),

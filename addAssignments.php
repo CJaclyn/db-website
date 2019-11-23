@@ -1,5 +1,8 @@
 <?php
   session_start();
+  include('connection.php');
+  include('loginfunctions.php');
+  global $name_err;
 ?>
 
 <!DOCTYPE html>
@@ -10,29 +13,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="add.css">
-<link rel="stylesheet" href="errormsg.css">
-
+<link rel="stylesheet" href="inputerror.css">
+<link rel="stylesheet" href="dberror.css">
 </head>
 <body>
   <h1>Homework Tracker</h1>
+  
+  <?php
+  if(isset($_POST['submit'])){
+    $class = htmlspecialchars($_POST['class']);
+    $type = htmlspecialchars($_POST['type']);
+    $name = htmlspecialchars($_POST['name']);
+    $dueDate = $_POST['due-date'];
+    $username = $_SESSION['reg_user'];
+
+    global $name_err;
+    $name_err = "";
+
+    if(regexCheck($name)){
+          //insert query
+          $insertQ = $db->prepare("INSERT INTO assignment(username, classID, assignmentType, assignmentName, dueDate)
+          VALUES(?, ?, ?, ?, ?)");
+          $insertQ->bind_param("sssss", $username, $class, $type, $name, $dueDate);
+
+          if($insertQ->execute()){
+            echo "<script type='text/javascript'>alert('Assignment successfully added!');</script>";
+            header( "refresh:.5;url=assignments.php" );
+
+          }else {
+            echo "<div class='errormsg'>";
+            echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
+            echo "</div>";
+            //echo mysqli_error($db);
+
+          }
+          $insertQ->close();
+    }if(!regexCheck($name)){
+      $name_err = "Assignment name can only have letters, numbers, periods, hyphens, single quotes, and spaces.";
+
+    }
+  }
+   ?>
 
   <?php
-  include('connection.php');
-  include('loginCheck.php');
-
   if (isLoggedIn()){
-      $username = $_SESSION['valid_user'];
-
-      echo "
-      <nav>
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-
-          <li><a href=\"login.php\">$username</a></li>
-          <li><a href=\"logout.php\">Logout</a></li>
-        </ul>
-      </nav>";
-
+      $currDate = date("Y-m-d");
       $query = "SELECT classID, className from class WHERE username = '".$username."' ORDER BY className ASC";
       $class = mysqli_query($db, $query);
 
@@ -57,12 +82,11 @@
             <option value='Test' name='test'>Test</option>
           </select>
           <label for='name'>Assignment Name</label>
-          <input type='text' name='name' id='name' required>
-          <label for='due-date'>Due Date</label>
-          <input type='date' name='due-date' id='due-date' required>
-          <br>
-          <button type='submit' name='submit'>Submit</button>
-          ";
+          <input type='text' name='name' id='name' required>";
+          echo "<div class='error'>".$name_err."</div>";
+          echo"<label for='due-date'>Due Date</label>
+          <input type='date' name='due-date' id='due-date' required min='".$currDate."'></input>";
+          echo"<br><button type='submit' name='submit'>Submit</button>";
           echo "</form>";
           //form end
           echo "<div id='centered'>";
@@ -70,7 +94,7 @@
 
         }else {
           //echo "ERROR: Could not able to execute $addQuery. ".mysqli_error($db);
-          echo "<div id='error'>";
+          echo "<div class='errormsg'>";
           echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
           echo "</div>";
         }
@@ -80,34 +104,8 @@
     {
       notLoggedIn();
     }
+        mysqli_close($db);
   ?>
-
-  <?php
-  if(isset($_POST['submit'])){
-    $class = $_POST['class'];
-    $type = $_POST['type'];
-    $name = $_POST['name'];
-    $dueDate = $_POST['due-date'];
-
-    $stmt = mysqli_prepare($db, "INSERT INTO assignment VALUES(DEFAULT, ?, ?, ?, ?, ?)");
-    mysqli_stmt_bind_param($stmt,"sssss", $username, $class, $type, $name, $dueDate);
-
-
-    if($stmt->execute()){
-      echo "Success!";
-      echo "<script type='text/javascript'>alert('Assignment successfully added!');</script>";
-      header( "refresh:.5;url=assignments.php" );
-    }
-    else {
-      //echo "ERROR: Could not able to execute $stmt. ".mysqli_error($db);
-      echo "<div id='error'>";
-      echo "<h2>There was an error, please contact <a href='mailto:eq6679uu@metrostate.edu?Subject=Error' target='_top'>Jaclyn Cao.</a></h2>";
-      echo "</div>";
-    }
-
-    mysqli_close($db);
-  }
-   ?>
 
 </body>
 </html>

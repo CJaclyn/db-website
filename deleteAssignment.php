@@ -1,5 +1,7 @@
 <?php
   session_start();
+  include('connection.php');
+  include('loginfunctions.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,29 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="classes.css">
-<link rel="stylesheet" href="errormsg.css">
+
 
 </head>
 <body>
   <h1>Homework Tracker</h1>
 
   <?php
-  include('connection.php');
-  include('loginCheck.php');
-  
+
   if (isLoggedIn()){
-      $username = $_SESSION['valid_user'];
       $name = $_GET['id'];
-
-      echo "
-      <nav>
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-
-          <li><a href=\"login.php\">$username</a></li>
-          <li><a href=\"logout.php\">Logout</a></li>
-        </ul>
-      </nav>";
 
       $selectQuery = "select assignmentID from assignment inner join user where assignment.username = user.username and assignmentName='".$name."'";
       $getAssignmentID = mysqli_query($db, $selectQuery);

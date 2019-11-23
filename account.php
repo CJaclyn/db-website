@@ -1,5 +1,7 @@
 <?php
   session_start();
+  include('connection.php');
+  include('loginfunctions.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,29 +12,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="account.css">
-<link rel="stylesheet" href="errormsg.css">
-
 
 </head>
 <body>
   <h1>Homework Tracker</h1>
 
   <?php
-    include('connection.php');
-    include('loginCheck.php');
-
     if (isLoggedIn()){
-      $username = $_SESSION['valid_user'];
-
-      echo "
-      <nav>
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"login.php\">$username</a></li>
-          <li><a href=\"logout.php\">Logout</a></li>
-        </ul>
-      </nav>";
-
       $usersQuery = "SELECT firstname, lastname, DATE_FORMAT(birthday, '%b %e, %Y') birthday, college, major from user where username='".$username."'";
 
       $users = mysqli_query($db, $usersQuery);

@@ -1,9 +1,8 @@
 <?php
   session_start();
-  if(isset($_SESSION['valid_user'])){
-      $old_user = $_SESSION['valid_user'];
-  }
-  include('loginCheck.php');
+  include('loginfunctions.php');
+  logout();
+  header( "refresh:1;url=index.php" );
 ?>
 
 <!DOCTYPE html>
@@ -20,28 +19,15 @@
   <h1>Homework Tracker</h1>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Sign-up</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="register.php">Sign-up</a></li>
       <li><a href="login.php">Login</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="adminLogin.html">Admin</a></li>
+      <li><a href="adminlogin.php">Admin</a></li>
     </ul>
   </nav>
-<?php
 
-  header( "refresh:1;url=index.html" );
-  if (!empty($old_user))
-  {
-    logOut();
-    echo '<h2>You are now logged out.</h2>';
-    echo '<p>Returning to homepage. . .</p>';
-  }
-  else
-  {
-    echo '<h2>You were not logged in, and so have not been logged out.</h2>';
-    echo '<p>Returning to homepage. . .</p>';
-  }
-?>
+  <h2>Logging out. . .</h2>
 
 </body>
 </html>
