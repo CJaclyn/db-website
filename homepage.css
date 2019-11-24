@@ -1,12 +1,13 @@
-footer {
-  margin-top: 5rem;
+body {
+  background-color: white;
+  
 }
 
-.header img {
+header img {
   width: 100%;
 }
 
-.header {
+header {
   position: relative;
   z-index: -1;
 }
@@ -21,35 +22,21 @@ footer {
   clear: both;
 }
 
-div img {
-  width: 50%;
-}
-
 div .column {
-  padding: 1rem;
   float: left;
-  width: 33.33%;
-  
-}
-
-div .left {
-  width: 35%;
-  text-align: center;
-}
-
-div .right {
   width: 50%;
-  background-color: white;
-  box-shadow: 5px 5px red;
+}
+
+div .r {
   float: right;
-  margin-right: 10rem;
+}
+
+.r h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  color: black;
 }
 
 .row {
   padding-bottom: 1rem;
-}
-
-.see-all a:hover {
-  color: red;
-  transition: .5s;
 }

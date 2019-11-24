@@ -4,7 +4,8 @@ h3:first-of-type {
 }
 
 #container {
-  background-color: white;
+  background-color: #747274;
+  color: white;
   margin-left: 25rem;
   margin-right: 25rem;
   margin-bottom: 10rem;
@@ -41,12 +42,13 @@ td, th {
 }
 
 #container a {
-  color: #58657C;
+  color: #B8DBD9;
+  font-size: 1.1rem;
 }
 
 #container a:hover {
   transition: .5s;
-  color: #B8DBD9;
+  color: white;
 }
 
 @media only screen and (max-width: 1368px){

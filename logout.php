@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="logout.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -26,7 +27,7 @@
     </ul>
   </nav>
 
-  <h2>Logging out. . .</h2>
+  <h2 style='color:white;'>Logging out. . .</h2>
 
 </body>
 </html>

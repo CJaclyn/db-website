@@ -14,6 +14,7 @@ global $user_err, $pass_err;
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="login.css">
 <link rel="stylesheet" href="inputerror.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
 </head>
 <body>

@@ -78,6 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="register.css">
 <link rel="stylesheet" href="inputerror.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 </head>
 <body>
 <h1>Homework Tracker</h1>

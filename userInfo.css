@@ -1,11 +1,13 @@
 h2:first-of-type {
   text-align: center;
   margin-top: 8rem;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
+  color: white;
 }
 
 #container {
-  background-color: white;
+  background-color: #747274;
+  color: white;
   margin-left: 22rem;
   margin-right: 22rem;
   margin-bottom: 10rem;
@@ -41,6 +43,7 @@ button {
   padding: .5rem 1.5rem;
   border-radius: 3px;
   border: none;
-  background-color: #2f4550;
+  background-color: #4e5166;
   color: white;
+  font-family: cairo;
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('loginfunctions.php');
+include("connection.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ include('loginfunctions.php');
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="adminPage.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>Homework Tracker</h1>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('loginfunctions.php');
+include("connection.php");
 global $pass_err;
 ?>
 
@@ -13,6 +14,7 @@ global $pass_err;
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="deleteUser.css">
 <link rel="stylesheet" href="inputerror.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
 </head>
 <body>

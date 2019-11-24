@@ -4,13 +4,14 @@ table {
 }
 
 td, th {
-  border: 1px solid #2f4550;
+  border: 1px solid white;
   text-align: left;
   padding: 1.3rem;
 }
 
 tr:nth-child(even){
-  background-color: white;
+  background-color: #747274;
+    color: white;
 }
 
 button {
@@ -18,6 +19,7 @@ button {
   padding: .5rem 1.5rem;
   border-radius: 3px;
   border: none;
-  background-color: #2f4550;
+  background-color: #4e5166;
   color: white;
+  font-family: cairo;
 }

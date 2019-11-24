@@ -1,9 +1,7 @@
 <?php
 include('functions.php');
-include_once("connection.php");
 
 function login(){
-  include_once("connection.php");
   if (isset($_POST['username']) && isset($_POST['password']))
   {
     $username = htmlspecialchars($_POST['username']);
@@ -13,6 +11,7 @@ function login(){
     $user_err = $pass_err = "";
 
     if(usernameRegex($username)){
+      include("connection.php");
       $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE username = ? AND admin = 0");
       $selectUserQ->bind_param("s", $username);
 
@@ -109,7 +108,6 @@ function logout(){
 
 /*admin login functions*/
 function loginAdmin(){
-  include_once("connection.php");
   if (isset($_POST['username']) && isset($_POST['password']))
   {
     $username = htmlspecialchars($_POST['username']);
@@ -119,6 +117,7 @@ function loginAdmin(){
     $user_err = $pass_err = "";
 
     if(usernameRegex($username)){
+      include("connection.php");
       $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE username = ? AND admin = 1");
       $selectUserQ->bind_param("s", $username);
 

@@ -1,14 +1,16 @@
 h2 {
   margin-top: 10rem;
   text-align: center;
+  color: white;
 }
 
 form {
   margin-bottom: 2rem;
-  background-color: white;
+  background-color: #747274;
+  color: white;
   padding: 3rem;
   width: 600px;
-  height: 150px;
+  height: 175px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -21,14 +23,18 @@ select{
   margin-bottom: 1rem;
 }
 
+select, input {
+  padding: .3rem;
+}
+
 button {
-  margin-left: 1rem;
   border: none;
   text-decoration: none;
   padding: .4rem 1rem;
-  background-color: #58657C;
+  background-color: #4e5166;
   color: white;
   cursor: pointer;
+  font-family: cairo;
 }
 
 #centered {
@@ -36,10 +42,5 @@ button {
 }
 
 #centered  a {
-  color: #2f4550;
-}
-
-#centered a:hover {
-  transition: .5s;
-  color: #B8DBD9;
+  color: white;
 }

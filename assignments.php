@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="assignments.css">
 <link rel="stylesheet" href="dberror.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
 
 </head>

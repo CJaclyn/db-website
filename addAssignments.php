@@ -15,10 +15,11 @@
 <link rel="stylesheet" href="add.css">
 <link rel="stylesheet" href="inputerror.css">
 <link rel="stylesheet" href="dberror.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>Homework Tracker</h1>
-  
+
   <?php
   if(isset($_POST['submit'])){
     $class = htmlspecialchars($_POST['class']);
