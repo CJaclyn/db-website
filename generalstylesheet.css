@@ -47,3 +47,10 @@ nav ul li a{
 nav ul li a:hover {
   text-decoration: underline white;
 }
+
+@media only screen and (min-width: 1920px) {
+  /*navbar links*/
+nav ul li a{
+  font-size: 1.3rem;
+}
+}

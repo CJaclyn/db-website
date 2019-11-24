@@ -84,8 +84,23 @@ header h2 {
     font-size: .75rem;
   }
   
-  .row .r h2 {
+  .row:last-of-type .r h2 {
     font-size: 1.5rem;
+  }
+  
+}
+
+@media only screen and (min-width: 1920px) {
+  .l p, #centered {
+    font-size: 1.6rem;
+  } 
+  
+  .row:last-of-type .r p {
+    font-size: 1.6rem;
+  }
+  
+  .row:last-of-type .r h2 {
+    font-size: 3rem;
   }
   
 }
