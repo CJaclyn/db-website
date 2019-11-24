@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('connection.php');
 include('loginfunctions.php');
 ?>
 
@@ -26,6 +25,7 @@ include('loginfunctions.php');
     echo "<form method=\"get\" action=\"userInfo.php\">";
     echo "<table>";
     echo "<tr> <th>Username</th> <th>Email</th> <th>Timestamp Created</th> </tr>";
+
     while ($row = mysqli_fetch_array($users)) {
       echo "<tr>";
       echo "<td>".$row['username']."</td>";
@@ -37,6 +37,7 @@ include('loginfunctions.php');
       echo "</table>";
       echo "</form>";
     mysqli_close($db);
+
   }else {
     isNotLoggedInAdmin();
   }

@@ -1,8 +1,9 @@
 <?php
 include('functions.php');
+include_once("connection.php");
 
 function login(){
-  require_once "connection.php";
+  include_once("connection.php");
   if (isset($_POST['username']) && isset($_POST['password']))
   {
     $username = htmlspecialchars($_POST['username']);
@@ -12,7 +13,7 @@ function login(){
     $user_err = $pass_err = "";
 
     if(usernameRegex($username)){
-      $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE Username = ? AND admin = 0");
+      $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE username = ? AND admin = 0");
       $selectUserQ->bind_param("s", $username);
 
       if($selectUserQ->execute()){
@@ -22,7 +23,7 @@ function login(){
 
         if($count == 1){
           $selectUserPassQ = $db->prepare("SELECT COUNT(1) FROM user
-          WHERE Username = ? AND Password = ? AND admin = 0");
+          WHERE username = ? AND password = ? AND admin = 0");
           $selectUserPassQ->bind_param("ss", $username, $password);
 
           if($selectUserPassQ->execute()){
@@ -67,6 +68,18 @@ function isLoggedIn(){
   		</nav>";
 
       return true;
+    }elseif(isset($_SESSION['valid_admin'])) {
+      $username = $_SESSION['valid_admin'];
+      echo "
+      <nav>
+        <ul>
+          <li><a href=\"index.php\">Home</a></li>
+          <li><a href=\"adminPage.php\"><span id='user'>$username</span></a></li>
+          <li><a href=\"logout.php\">Logout</a></li>
+        </ul>
+      </nav>";
+
+      return true;
 
     }else {
       echo "
@@ -96,7 +109,7 @@ function logout(){
 
 /*admin login functions*/
 function loginAdmin(){
-  require_once "connection.php";
+  include_once("connection.php");
   if (isset($_POST['username']) && isset($_POST['password']))
   {
     $username = htmlspecialchars($_POST['username']);
@@ -106,7 +119,7 @@ function loginAdmin(){
     $user_err = $pass_err = "";
 
     if(usernameRegex($username)){
-      $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE Username = ? AND admin = 1");
+      $selectUserQ = $db->prepare("SELECT COUNT(1) FROM user WHERE username = ? AND admin = 1");
       $selectUserQ->bind_param("s", $username);
 
       if($selectUserQ->execute()){
@@ -116,7 +129,7 @@ function loginAdmin(){
 
         if($count == 1){
           $selectUserPassQ = $db->prepare("SELECT COUNT(1) FROM user
-          WHERE Username = ? AND Password = ? AND admin = 1");
+          WHERE username = ? AND password = ? AND admin = 1");
           $selectUserPassQ->bind_param("ss", $username, $password);
 
           if($selectUserPassQ->execute()){
@@ -163,9 +176,13 @@ function isLoggedInAdmin(){
   }
 }
 
-function isNotLoggedInAdmin {
+function isNotLoggedInAdmin() {
   if(!isset($_SESSION['valid_admin'])) {
     header('Location:index.php');
+    return true;
+
+  }else {
+    return false;
   }
 }
 

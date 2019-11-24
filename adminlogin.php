@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('connection.php');
 include('loginfunctions.php');
-loginadmin();
+loginAdmin();
+global $user_err, $pass_err;
 ?>
 
 <!DOCTYPE html>
@@ -13,30 +13,47 @@ loginadmin();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalstylesheet.css">
 <link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="inputerror.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>Homework Tracker</h1>
   <?php
-  /*Logged in regular users can't access this admin login page.
-  Return user back to homepage if they are logged in as a regular user.*/
-    if(isLoggedIn()){
-      header('location:index.php');
-    }elseif(isLoggedInAdmin()){
-      header('location:adminPage.php');
+    if(isLoggedInAdmin()){
+      echo "<h2>Redirecting to Admin Page. . .</h2>";
+      header("refresh:1;url=adminPage.php");
+
+    }elseif(isset($_SESSION['reg_user'])){
+      header("location:index.php");
+
+    }else {
+      echo "
+      <nav>
+        <ul>
+          <li><a href=\"index.php\">Home</a></li>
+          <li><a href=\"register.php\">Register</a></li>
+          <li><a href=\"login.php\">Login</a></li>
+          <li><a href=\"adminlogin.php\">Admin</a></li>
+        </ul>
+      </nav>";
+      
+      echo '
+      <h2>Admin Login</h2>
+      <div id="form">
+        <form action="adminlogin.php" method="post" name="adminForm">
+          <label for="username">Admin Username</label>
+          <input type="text" id="username" name="username" required><br>';
+      echo '<div class=\'error\'>'.$user_err.'</div>';
+      echo '<label for="password">Admin Password</label>
+          <input type="password" id="password" name="password" required><br>';
+      echo '<div class=\'error\'>'.$pass_err.'</div>';
+      echo'
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      ';
     }
   ?>
-
-  <h2>Admin Login</h2>
-  <div id="form">
-    <form action="adminPage.php" method="post" name="adminForm">
-      <label for="username">Admin Username</label>
-      <input type="text" id="username" name="username" required><span id="validate-adminU"></span><br>
-      <label for="password">Admin Password</label>
-      <input type="password" id="password" name="password" required><span id="validate-adminP"></span><br>
-      <button type="submit">Login</button>
-    </form>
-  </div>
 
 </body>
 </html>

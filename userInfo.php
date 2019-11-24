@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('loginfunctions.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +29,6 @@
   $parseURL = strval(parse_url($url, PHP_URL_QUERY));
   $user = strval(explode('=', $parseURL)[0]);
   echo "<h2>"."User Information - ".$user."</h2>";
-
-  include('connection.php');
 
   $usersQuery = "SELECT firstname, lastname, DATE_FORMAT(birthday, '%b %e, %Y') birthday, college, major from user where username='$user'";
 
