@@ -3,16 +3,19 @@ body {
   margin: 0;
   padding: 0;
   background-color: #b9b7a7;
+  width: 100%;
+  height: 100%;
 }
 
 /*website header/logo */
 h1:first-of-type {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 2rem;
   text-align: center;
   color: white;
-  background-color: #4e5166;
-  margin: 0
+  background-color: #666053;
+  margin: 0;
+  font-family: unica one;
 }
 
 /*navbar position & styling*/
@@ -39,17 +42,6 @@ nav ul li a{
   text-decoration: none;
   color: white;
   font-weight: bold;
-}
-
-/*footer*/
-footer {
-    background-color: pink;
-    width: 100%;
-    padding: .5rem;
-}
-
-footer h4 {
-  font-size: 1.5rem;
 }
 
 nav ul li a:hover {

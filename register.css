@@ -1,12 +1,17 @@
+body {
+  background-image: url("/db-website/background.jpg");
+}
+
 .form {
   display: block;
   text-align: center;
-  width: 500px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
   margin-bottom: 10%;
   color: black;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 form h2 {
@@ -59,7 +64,7 @@ button {
   margin-bottom: 4rem;
   padding: .8rem 3rem;
   border-radius: 3px;
-  background-color: #4e5166;
+  background-color: #666053;
   color: white;
   border: none;
   cursor: pointer;

@@ -1,3 +1,7 @@
+body {
+  background-image: url("/db-website/background.jpg");
+}
+
 h2 {
   text-align: center;
   margin-top: 8rem;
@@ -35,7 +39,7 @@ form button {
   margin-top: 1rem;
   padding: .7rem 2.3rem;
   border-radius: 3px;
-  background-color: #4e5166;
+  background-color: #666053;
   color: white;
   border: none;
   cursor: pointer;
@@ -57,7 +61,7 @@ form button {
 
 #centered a {
   text-decoration: none;
-  background-color: #4e5166;
+  background-color: #666053;
   padding: 1rem;
   color: white;
   margin: 1rem;

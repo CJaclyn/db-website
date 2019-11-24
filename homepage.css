@@ -1,15 +1,6 @@
-body {
-  background-color: white;
-  
-}
-
-header img {
+.row img {
   width: 100%;
-}
-
-header {
-  position: relative;
-  z-index: -1;
+  display: block;
 }
 
 * {
@@ -22,6 +13,10 @@ header {
   clear: both;
 }
 
+.row:first-of-type {
+  background-color: #9aa090;
+}
+
 div .column {
   float: left;
   width: 50%;
@@ -29,14 +24,68 @@ div .column {
 
 div .r {
   float: right;
+  color: white;
 }
 
-.r h2 {
-  font-size: 1.7rem;
+header h2 {
+  font-size: 3.8rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+  font-family: unica one;
+}
+
+.l p {
+  font-size: 1.1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  color: white;
+  margin-top: 2rem;
+}
+
+#centered {
   text-align: center;
   color: black;
+  font-size: 1.2rem;
+  
 }
 
-.row {
-  padding-bottom: 1rem;
+.l a {
+  color: white;
+  cursor: pointer;
+}
+
+.row:last-of-type {
+  background-color: #7c90a0;
+}
+
+.row:last-of-type .r h2 {
+  font-family: unica one;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.row .r p {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 1144px) {
+  header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .l p, #centered {
+    font-size: .9rem;
+  }
+  
+  .row:last-of-type .r p {
+    font-size: .75rem;
+  }
+  
+  .row .r h2 {
+    font-size: 1.5rem;
+  }
+  
 }

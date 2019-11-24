@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="add.css">
 <link rel="stylesheet" href="inputerror.css">
 <link rel="stylesheet" href="dberror.css">
-<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cairo|Unica+One&display=swap" rel="stylesheet">
 
 </head>
 <body>
