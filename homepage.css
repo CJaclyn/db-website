@@ -45,13 +45,13 @@ header h2 {
 
 #centered {
   text-align: center;
-  color: black;
+  color: white;
   font-size: 1.2rem;
   
 }
 
 .l a {
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
